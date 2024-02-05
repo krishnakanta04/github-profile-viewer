@@ -56,9 +56,9 @@ export default async function SearchPage({
               <Button
                 endContent={<MoveRight strokeWidth={1} />}
                 as={Link}
-                href={repo.html_url}
+                href={`/profile/${repo.login}`}
               >
-                GitHub Profile
+                GitHub Profile Viewer
                 <Github className="h-4 w-4" />
               </Button>
             </div>
