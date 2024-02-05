@@ -1,6 +1,5 @@
 import PaginationBar from "@/components/PaginationBar";
 import RepoDetailsCard from "@/components/RepoDetailsCard";
-import { Card, CardHeader } from "@nextui-org/card";
 
 export default async function ReposPage({
   params,
@@ -21,6 +20,13 @@ export default async function ReposPage({
   const githubResponse = await fetch(
     `https://api.github.com/users/${username}/repos?page=${page}&per_page=${perPage}`
   );
+
+  //handling github error
+  if (!githubResponse.ok) {
+    const error = await githubResponse.json();
+    console.log("ERROR - ", error);
+    throw new Error(error.message);
+  }
 
   // extract data from response body
   const userGithubRepos = await githubResponse.json();
