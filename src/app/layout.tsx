@@ -11,6 +11,16 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "GitHub Profile Viewer",
   description: "Explore GitHub profiles and repositories",
+  icons: [
+    {
+      url: "/dark-logo.svg",
+      media: "(prefers-color-scheme: light)",
+    },
+    {
+      url: "/light-logo.svg",
+      media: "(prefers-color-scheme: dark)",
+    },
+  ],
 };
 
 export default function RootLayout({
