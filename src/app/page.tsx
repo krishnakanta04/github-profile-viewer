@@ -5,14 +5,15 @@ import Link from "next/link";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/button";
 
-import { MoveRight } from "lucide-react";
+import { Github, MoveRight } from "lucide-react";
 
 export default function Home() {
   // useState for controlled username input
   const [username, setUsername] = useState<string>("");
 
   return (
-    <div className="flex flex-col gap-5 items-center justify-center mt-[150px]">
+    <div className="flex flex-col gap-5 items-center justify-center mt-[100px]">
+      <Github className="h-[100px] w-[100px]" />
       <p className="text-3xl font-bold text-center">
         Explore GitHub profiles and repositories
       </p>
