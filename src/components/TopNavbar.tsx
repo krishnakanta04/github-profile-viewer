@@ -12,7 +12,7 @@ import { Github } from "lucide-react";
 export default function TopNavbar() {
   return (
     <Navbar>
-      <NavbarBrand className=" gap-x-2">
+      <NavbarBrand className="gap-x-2" as={Link} href="/">
         <Github />
         <p className="font-bold text-inherit">GitHub Profile Viewer</p>
       </NavbarBrand>
