@@ -1,3 +1,4 @@
+import RepoDetailsCard from "@/components/RepoDetailsCard";
 import { Card, CardHeader } from "@nextui-org/card";
 
 export default async function ReposPage({
@@ -24,12 +25,16 @@ export default async function ReposPage({
   const userGithubRepos = await githubResponse.json();
 
   return (
-    <div>
+    <div className="space-y-[20px] mt-[20px] max-w-[500px] m-auto">
       {userGithubRepos.map((repo: any) => (
-        <Card key={repo.id}>
-          <CardHeader>{repo.id}</CardHeader>
-        </Card>
+        <RepoDetailsCard
+          id={repo.id}
+          name={repo.name}
+          description={repo.description}
+          repoUrl={repo.html_url}
+        />
       ))}
+      <div></div>
     </div>
   );
 }
