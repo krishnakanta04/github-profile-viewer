@@ -37,7 +37,7 @@ export default function PaginationBar({
   return (
     <Pagination
       size="lg"
-      total={type === "search" ? 100 : Math.ceil(repos / 10)}
+      total={Math.ceil(repos / 10)}
       initialPage={pageNumber}
       className="w-min m-auto"
       onChange={fetchNewRepos}
