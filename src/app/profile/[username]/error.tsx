@@ -22,7 +22,7 @@ export default function Error({
     <div className="mt-[100px] flex items-center justify-center">
       <Card className="max-w-[600px] p-5">
         <CardHeader>
-          <h2 className="text-4xl font-bold text-red-500">
+          <h2 className="text-2xl font-bold text-red-500">
             Something went wrong <AlertCircle className="inline-flex" />
           </h2>
         </CardHeader>

@@ -16,11 +16,13 @@ export default async function ReposPage({
   const { username } = params;
   const { numberOfRepos, page, perPage } = searchParams;
 
+  const delay = (ms: any) => new Promise((resolve) => setTimeout(resolve, ms));
   // fetch user's github profile
   const githubResponse = await fetch(
     `https://api.github.com/users/${username}/repos?page=${page}&per_page=${perPage}`
   );
 
+  delay(10000);
   //handling github error
   if (!githubResponse.ok) {
     const error = await githubResponse.json();
@@ -33,8 +35,10 @@ export default async function ReposPage({
 
   return (
     <div className="space-y-[20px] mt-[20px] max-w-[500px] m-auto">
+      <h2 className="text-2xl font-bold text-center">Your Repositories</h2>
       {userGithubRepos.map((repo: any) => (
         <RepoDetailsCard
+          key={repo.id}
           id={repo.id}
           name={repo.name}
           description={repo.description}
@@ -43,6 +47,7 @@ export default async function ReposPage({
       ))}
       <div>
         <PaginationBar
+          username={username}
           pageNumber={parseInt(page, 10)}
           repos={parseInt(numberOfRepos)}
         />

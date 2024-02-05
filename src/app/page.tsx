@@ -12,7 +12,7 @@ export default function Home() {
   const [username, setUsername] = useState<string>("");
 
   return (
-    <div className="flex flex-col gap-7 items-center justify-center mt-[70px]">
+    <div className="flex flex-col gap-7 items-center justify-center mt-[70px] animate__animated animate__fadeIn">
       <Github className="h-[100px] w-[100px]" />
       <p className="text-3xl font-bold text-center">
         Explore GitHub profiles and repositories

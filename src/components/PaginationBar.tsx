@@ -8,11 +8,13 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 interface PaginationBarProps {
+  username: string;
   pageNumber: number;
   repos: number;
 }
 
 export default function PaginationBar({
+  username,
   pageNumber,
   repos,
 }: PaginationBarProps) {
@@ -20,7 +22,7 @@ export default function PaginationBar({
 
   const fetchNewRepos = (pageNumber: number) => {
     router.push(
-      `/profile/krishnakanta04/repos?numberOfRepos=17&page=${pageNumber}&perPage=10`
+      `/profile/${username}/repos?numberOfRepos=17&page=${pageNumber}&perPage=10`
     );
   };
 

@@ -21,12 +21,12 @@ export default function Error({
     <div className="mt-[100px] flex items-center justify-center">
       <Card className="max-w-[600px] p-5">
         <CardHeader>
-          <h2 className="text-4xl font-bold text-red-500">
+          <h2 className="text-xl font-bold text-red-500">
             Something went wrong <AlertCircle className="inline-flex" />
           </h2>
         </CardHeader>
         <CardBody>
-          <p className="font-bold text-2xl">{error.message}</p>
+          <p className="font-bold text-xl">{error.message}</p>
         </CardBody>
         <CardFooter className="gap-x-5">
           <Button

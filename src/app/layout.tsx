@@ -1,6 +1,8 @@
+import "./globals.css";
+import "animate.css";
+
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
 import UIProvider from "@/providers/UIProvider";
 import TopNavbar from "@/components/TopNavbar";
 
@@ -21,7 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <UIProvider>
           <TopNavbar />
-          <div className="max-w-[1024px] px-[24px] m-auto">{children}</div>
+          <div className="max-w-[1024px] px-[24px] m-auto mt-[10px]">
+            {children}
+          </div>
         </UIProvider>
       </body>
     </html>

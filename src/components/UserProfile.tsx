@@ -20,7 +20,7 @@ export default function UserProfile({
   repos,
 }: UserProfileProps) {
   return (
-    <div className="mt-[50px] flex flex-col gap-3 items-center max-w-[700px] m-auto">
+    <div className="mt-[20px] flex flex-col gap-3 items-center max-w-[500px] m-auto animate__animated animate__fadeIn">
       {/* User's github profile image */}
       <Image
         src={imageUrl}

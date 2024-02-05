@@ -21,7 +21,7 @@ export default function RepoDetailsCard({
 }: RepoDetailsCardProps) {
   return (
     // repos details card
-    <Card key={id} className="p-2">
+    <Card key={id} className="p-2 animate__animated animate__fadeIn">
       <CardHeader className="text-xl font-bold">
         <h3>{name}</h3>
       </CardHeader>
