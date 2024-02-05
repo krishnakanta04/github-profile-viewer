@@ -15,7 +15,7 @@ export default async function ReposPage({
   // get username from url using dynamic segment
   const { username } = params;
   const { numberOfRepos, page, perPage } = searchParams;
-
+  console.log(numberOfRepos);
   const delay = (ms: any) => new Promise((resolve) => setTimeout(resolve, ms));
   // fetch user's github profile
   const githubResponse = await fetch(

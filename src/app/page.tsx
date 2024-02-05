@@ -12,7 +12,7 @@ export default function Home() {
   const [username, setUsername] = useState<string>("");
 
   return (
-    <div className="flex flex-col gap-7 items-center justify-center mt-[70px] animate__animated animate__fadeIn">
+    <div className="flex flex-col gap-7 items-center justify-center mt-[50px] animate__animated animate__fadeIn">
       <Github className="h-[100px] w-[100px]" />
       <p className="text-3xl font-bold text-center">
         Explore GitHub profiles and repositories
@@ -20,21 +20,34 @@ export default function Home() {
 
       {/* username input field */}
       <Input
+        fullWidth
         value={username}
         onValueChange={setUsername}
         type="text"
         label="Enter GitHub Username to continue"
-        className="w-[300px]"
+        className="max-w-[500px]"
       />
 
       {/* if username input is empty show nothing otherwise a button to continue */}
       {!!username ? (
-        <Button color="primary" as={NextLink} href={`/profile/${username}`}>
-          Continue{" "}
-          <span>
-            <MoveRight />
-          </span>
-        </Button>
+        <div className="flex gap-x-5 animate__animated animate__fadeIn">
+          <Button color="primary" as={NextLink} href={`/profile/${username}`}>
+            Continue{" "}
+            <span>
+              <MoveRight />
+            </span>
+          </Button>
+          <Button
+            className="w-[123px]"
+            as={NextLink}
+            href={`/search?username=${username}&page=1&perPage=10`}
+          >
+            Search{" "}
+            <span>
+              <MoveRight />
+            </span>
+          </Button>
+        </div>
       ) : null}
 
       {/* some sample data to try */}
