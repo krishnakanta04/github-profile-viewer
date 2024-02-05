@@ -1,3 +1,4 @@
+import PaginationBar from "@/components/PaginationBar";
 import RepoDetailsCard from "@/components/RepoDetailsCard";
 import { Card, CardHeader } from "@nextui-org/card";
 
@@ -34,7 +35,12 @@ export default async function ReposPage({
           repoUrl={repo.html_url}
         />
       ))}
-      <div></div>
+      <div>
+        <PaginationBar
+          pageNumber={parseInt(page, 10)}
+          repos={parseInt(numberOfRepos)}
+        />
+      </div>
     </div>
   );
 }
