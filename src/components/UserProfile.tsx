@@ -51,7 +51,11 @@ export default function UserProfile({
         </CardBody>
         <Divider />
         <CardFooter className="justify-center ">
-          <Button color="primary" as={Link} href={`/profile/${username}/repos`}>
+          <Button
+            color="primary"
+            as={Link}
+            href={`/profile/${username}/repos?numberOfRepos=${repos}&page=1&perPage=10`}
+          >
             Go to Repositories{" "}
             <span>
               <MoveRight />
