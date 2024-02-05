@@ -47,6 +47,7 @@ export default async function ReposPage({
       ))}
       <div>
         <PaginationBar
+          type="repos"
           username={username}
           pageNumber={parseInt(page, 10)}
           repos={parseInt(numberOfRepos)}

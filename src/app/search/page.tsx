@@ -39,6 +39,7 @@ export default async function SearchPage({
     <div className="space-y-[20px] mt-[20px] max-w-[500px] m-auto">
       <h2 className="text-2xl font-bold text-center">Found Repositories</h2>
       {userGithubSearches.items.map((repo: any) => (
+        // user details card
         <Card key={repo.id} className="animate__animated animate__fadeIn">
           <CardBody className="flex-row items-center gap-3">
             <div>
