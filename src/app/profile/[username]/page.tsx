@@ -13,6 +13,17 @@ export default async function ProfilePage({
     `https://api.github.com/users/${username}`
   );
 
+  //handling github error
+  if (!githubResponse.ok) {
+    const error = await githubResponse.json();
+    console.log("ERROR - ", error);
+    if (error.message === "Not Found") {
+      throw new Error(`${username} User not found !!!`);
+    } else {
+      throw new Error(error.message);
+    }
+  }
+
   // extract data from response body
   const userGithubProfile = await githubResponse.json();
 

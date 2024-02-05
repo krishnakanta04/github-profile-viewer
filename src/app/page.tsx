@@ -13,7 +13,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col gap-5 items-center justify-center mt-[150px]">
-      <p className="text-2xl font-bold text-center">
+      <p className="text-3xl font-bold text-center">
         Explore GitHub profiles and repositories
       </p>
 
