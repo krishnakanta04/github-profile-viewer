@@ -1,3 +1,4 @@
+import ErrorMessageCard from "@/components/ErrorMessageCard";
 import UserProfile from "@/components/UserProfile";
 
 export default async function ProfilePage({
@@ -18,7 +19,8 @@ export default async function ProfilePage({
     const error = await githubResponse.json();
     console.log("ERROR - ", error);
     if (error.message === "Not Found") {
-      throw new Error(`${username} User not found !!!`);
+      const errorDetails = { message: error.message, username: username };
+      return <ErrorMessageCard error={errorDetails} />;
     } else {
       throw new Error(error.message);
     }
