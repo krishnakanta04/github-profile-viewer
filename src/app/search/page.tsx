@@ -37,34 +37,42 @@ export default async function SearchPage({
 
   return (
     <div className="space-y-[20px] mt-[20px] max-w-[500px] m-auto">
-      <h2 className="text-2xl font-bold text-center">Found Repositories</h2>
-      {userGithubSearches.items.map((repo: any) => (
-        // user details card
-        <Card key={repo.id} className="animate__animated animate__fadeIn">
-          <CardBody className="flex-row items-center gap-3">
-            <div>
-              <Image
-                src={repo.avatar_url}
-                width={50}
-                height={50}
-                className="rounded-full"
-                alt="user profile"
-              />
-            </div>
-            <div className="space-y-2">
-              <p>{repo.login}</p>
-              <Button
-                endContent={<MoveRight strokeWidth={1} />}
-                as={Link}
-                href={`/profile/${repo.login}`}
-              >
-                GitHub Profile Viewer
-                <Github className="h-4 w-4" />
-              </Button>
-            </div>
-          </CardBody>
-        </Card>
-      ))}
+      <h2 className="text-2xl font-bold text-center">
+        Searched Repositories Results
+      </h2>
+      {!!userGithubSearches.items.length ? (
+        userGithubSearches.items.map((repo: any) => (
+          // user details card
+          <Card key={repo.id} className="animate__animated animate__fadeIn">
+            <CardBody className="flex-row items-center gap-3">
+              <div>
+                <Image
+                  src={repo.avatar_url}
+                  width={50}
+                  height={50}
+                  className="rounded-full"
+                  alt="user profile"
+                />
+              </div>
+              <div className="space-y-2">
+                <p>{repo.login}</p>
+                <Button
+                  endContent={<MoveRight strokeWidth={1} />}
+                  as={Link}
+                  href={`/profile/${repo.login}`}
+                >
+                  GitHub Profile Viewer
+                  <Github className="h-4 w-4" />
+                </Button>
+              </div>
+            </CardBody>
+          </Card>
+        ))
+      ) : (
+        <p className="text-xl font-bold text-center text-red-500">
+          No users found
+        </p>
+      )}
       <div>
         <PaginationBar
           username={username}
