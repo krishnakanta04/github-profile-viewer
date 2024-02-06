@@ -34,10 +34,17 @@ export default function PaginationBar({
     }
   };
 
+  const total =
+    type === "search"
+      ? Math.ceil(repos / 10) > 100
+        ? 100
+        : Math.ceil(repos / 10)
+      : Math.ceil(repos / 10);
+
   return (
     <Pagination
       size="lg"
-      total={Math.ceil(repos / 10)}
+      total={total}
       initialPage={pageNumber}
       className="w-min m-auto"
       onChange={fetchNewRepos}
